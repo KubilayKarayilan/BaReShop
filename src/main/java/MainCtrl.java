@@ -1,3 +1,7 @@
+import Customer.CDao;
+import jpa.CustomerService;
+import jpa.CustomerSvcImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -9,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @EnableAutoConfiguration
 public class MainCtrl {
-    @RequestMapping("/")
+    @Autowired
+    CustomerService cusService;
 
+    @RequestMapping("/")
     String mainCtrl() {
+        cusService.saveCustomer(new CDao().setId(11));
         return "forward:/index.html";
     }
 
