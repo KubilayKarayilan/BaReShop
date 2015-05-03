@@ -1,14 +1,21 @@
-package jpa;
+package no.bareshop.server.jpa;
 
-import Customer.CDao;
+import no.bareshop.server.Customer.CDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by kubilay on 03.05.2015.
  */
+
+@Component
 public class CustomerSvcImpl implements CustomerService {
+
     @Autowired
-    CustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
+
     @Override
     public CDao getCustomer(Long cid) {
         customerRepository.findOne(cid);

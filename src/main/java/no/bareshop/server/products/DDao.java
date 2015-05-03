@@ -1,4 +1,4 @@
-package products;
+package no.bareshop.server.products;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by kubilay on 30.04.2015.
  */
 @Entity
-@Table(name="products")
+@Table(name= "no/bareshop/server/products")
 public class DDao {
 
         @Id

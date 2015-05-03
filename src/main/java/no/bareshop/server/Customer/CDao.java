@@ -1,4 +1,4 @@
-package Customer;
+package no.bareshop.server.Customer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

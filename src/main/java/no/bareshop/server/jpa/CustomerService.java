@@ -1,7 +1,7 @@
-package jpa;
+package no.bareshop.server.jpa;
 
-import Customer.CDao;
-import org.springframework.beans.factory.annotation.Autowired;
+import no.bareshop.server.Customer.CDao;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by kubilay on 03.05.2015.

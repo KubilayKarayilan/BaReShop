@@ -1,11 +1,15 @@
-package jpa;
+package no.bareshop.server.jpa;
 
-import Customer.CDao;
+import no.bareshop.server.Customer.CDao;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by kubilay on 03.05.2015.
  */
+@Component
 public interface CustomerRepository extends CrudRepository<CDao, Long> {
 
     @Override
