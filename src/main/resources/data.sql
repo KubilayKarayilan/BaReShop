@@ -1,0 +1,1 @@
+insert into person(id,username, password, fullname, email,tlf,tlfUID) values (34343565,'habuma', 'password', 'Craig Walls', 'craig@habuma.com',92255840,'1234-2345-3455-2344');

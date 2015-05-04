@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by kubilay on 30.04.2015.
  */
 @Entity
-@Table(name= "no/bareshop/server/products")
+@Table(name= "products")
 public class DDao {
 
         @Id

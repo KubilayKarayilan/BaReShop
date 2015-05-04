@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan()
 public class MainCtrl {
 
 
@@ -27,7 +27,7 @@ public class MainCtrl {
 
     @RequestMapping("/")
     String mainCtrl() {
-        cusService.saveCustomer(new CDao().setId(11));
+        cusService.saveCustomer(new CDao().setId(11L).setUsername("KMan"));
         return "forward:/index.html";
     }
 
