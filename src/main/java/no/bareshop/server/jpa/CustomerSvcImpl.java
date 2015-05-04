@@ -2,15 +2,13 @@ package no.bareshop.server.jpa;
 
 import no.bareshop.server.Customer.CDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by kubilay on 03.05.2015.
  */
 
-@Component
+@Service
 public class CustomerSvcImpl implements CustomerService {
 
     @Autowired

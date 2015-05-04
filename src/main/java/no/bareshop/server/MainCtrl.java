@@ -1,9 +1,12 @@
+
 package no.bareshop.server;
+import org.springframework.stereotype.Controller;
 
 import no.bareshop.server.Customer.CDao;
 import no.bareshop.server.jpa.CustomerService;
 import no.bareshop.server.jpa.CustomerSvcImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @ComponentScan
 public class MainCtrl {
 
+
     @Autowired
     private CustomerService cusService;
 
@@ -29,7 +33,7 @@ public class MainCtrl {
 
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String... args) throws Exception {
 
         SpringApplication.run(MainCtrl.class, args);
 
