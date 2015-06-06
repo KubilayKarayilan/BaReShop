@@ -1,10 +1,23 @@
 var mainapp=angular.module('mainapp', ["ngRoute",
     "mobile-angular-ui"]);
-mainapp.config(function($routeProvider) {
+/*mainapp.config(function($routeProvider) {
     $routeProvider.when('/', {
         // ...
     });
     // ...
+});*/
+
+mainapp.factory('LoginFboFactory', function() {
+    var state=false;
+    return {
+        setState: function(boolsk){
+            return state=boolsk;
+        },
+        getState:function () {
+            return state;
+        }
+    }
+
 });
 mainapp.controller('mainCtrl',function($scope,$http, LoginFboFactory) {
     var dataObj = {
