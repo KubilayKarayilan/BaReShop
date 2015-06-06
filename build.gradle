@@ -4,6 +4,7 @@ apply plugin: 'application'
 apply plugin: 'spring-boot'
 
 
+
 mainClassName = "no.bareshop.server.MainCtrl"
 version = '1.0'
 

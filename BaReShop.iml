@@ -37,10 +37,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:1.2.3.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-logging:1.2.3.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.yaml:snakeyaml:1.14" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.4.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
@@ -80,12 +76,15 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aspects:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjweaver:1.8.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-jdbc:4.1.6.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.20" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-orm:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-tx:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-core:4.3.8.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: postgresql:postgresql:9.0-801.jdbc4" level="project" />
-    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20" level="project" />
   </component>
 </module>
