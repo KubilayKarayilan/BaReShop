@@ -1,11 +1,26 @@
 var mainapp=angular.module('mainapp', ["ngRoute",
     "mobile-angular-ui"]);
-/*mainapp.config(function($routeProvider) {
-    $routeProvider.when('/', {
-        // ...
-    });
-    // ...
-});*/
+ mainapp.config(function($routeProvider) {
+     $routeProvider
+
+         // route for the home page
+         .when('/', {
+             templateUrl : 'views/login.html',
+             controller  : 'mainCtrl'
+         })
+
+     // route for the about page
+         .when('/menu', {
+             templateUrl : 'views/menu.html',
+             controller  : 'menuCtrl'
+         })
+
+        /*     // route for the contact page
+         .when('/contact', {
+             templateUrl : 'pages/contact.html',
+             controller  : 'contactController'
+         });*/
+});
 
 mainapp.factory('LoginFboFactory', function() {
     var state=false;
@@ -67,4 +82,7 @@ mainapp.controller('mainCtrl',function($scope,$http, LoginFboFactory) {
 
 
 
+});
+mainapp.controller('menuCtrl',function($scope,$http, LoginFboFactory) {
+  $scope.pageId="menu"
 });
