@@ -1,49 +1,61 @@
-var mainapp=angular.module('mainapp', ["ngRoute",
+var mainapp = angular.module('mainapp', ["ngRoute",
     "mobile-angular-ui"]);
- mainapp.config(function($routeProvider) {
-     $routeProvider
+mainapp.config(function ($routeProvider) {
+    $routeProvider
 
-         // route for the home page
-         .when('/', {
-             templateUrl : 'views/login.html',
-             controller  : 'mainCtrl'
-         })
+        // route for the home page
+        .when('/', {
+            templateUrl: 'views/login.html',
+            controller: 'mainCtrl'
+        })
 
-     // route for the about page
-         .when('/menu', {
-             templateUrl : 'views/menu.html',
-             controller  : 'menuCtrl'
-         })
 
-        /*     // route for the contact page
-         .when('/contact', {
-             templateUrl : 'pages/contact.html',
-             controller  : 'contactController'
-         });*/
+        .when('/menu', {
+            templateUrl: 'views/menu.html',
+            controller: 'menuCtrl'
+        })
+
+
+        .when('/ol', {
+            templateUrl: 'views/ol.html',
+            controller: 'mainCtrl'
+        })
+        .when('/drink', {
+            templateUrl: 'views/drink.html',
+            controller: 'mainCtrl'
+        })
+        .when('/vin', {
+            templateUrl: 'views/vin.html',
+            controller: 'mainCtrl'
+        });
 });
 
-mainapp.factory('LoginFboFactory', function() {
-    var state=false;
+mainapp.factory('LoginFboFactory', function () {
+    var state = false;
     return {
-        setState: function(boolsk){
-            return state=boolsk;
+        setState: function (boolsk) {
+            return state = boolsk;
         },
-        getState:function () {
+        getState: function () {
             return state;
         }
     }
 
 });
-mainapp.controller('mainCtrl',function($scope,$http, LoginFboFactory) {
+mainapp.controller('mainCtrl', function ($scope, $http, LoginFboFactory,$location) {
+    $scope.isLogin=false;
+    console.log($scope.isLogin)
     var dataObj = {
-        name : "kubi",
-        password : "12445",
-        state : false
+        name: "kubi",
+        password: "12445",
+        state: false
     };
-
-    $scope.inner={tableItems:{m:{0:""},ti:{0:""},o:{0:""},to:{0:""},f:{0:""},l:{0:""},s:{0:""}}};
-    $scope.mTimer=7.5;
-    $scope.oneAtATime = true;
+    $scope.$on('$routeChangeStart', function(next, current) {
+        $scope.isLogin=true;
+console.log($scope.isLogin)
+         /* if($location.path() == "/"){}else{}*/
+    });
+    $scope.mTimer = 7.5;
 
     $scope.groups = [
         {
@@ -58,31 +70,30 @@ mainapp.controller('mainCtrl',function($scope,$http, LoginFboFactory) {
 
     $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 
-    $scope.addItem = function() {
+    $scope.addItem = function () {
         var newItemNo = $scope.items.length + 1;
         $scope.items.push('Item ' + newItemNo);
     };
 
 
-
-    $scope.logon=function() {
+    $scope.logon = function () {
         var res = $http.post('/token', dataObj);
-        res.success(function(data, status, headers, config) {
+        res.success(function (data, status, headers, config) {
             $scope.message = data;
-            $scope.showDayView=true;
-            $scope.showWeekView=false;
-            document.cookie="loggedIn = true";
+            $scope.showDayView = true;
+            $scope.showWeekView = false;
+            document.cookie = "loggedIn = true";
             LoginFboFactory.setState(true);
             console.log(LoginFboFactory.getState())
         });
-        res.error(function(data, status, headers, config) {
-            $scope.showDayView=false;
+        res.error(function (data, status, headers, config) {
+            $scope.showDayView = false;
         });
     }
 
 
-
 });
-mainapp.controller('menuCtrl',function($scope,$http, LoginFboFactory) {
-  $scope.pageId="menu"
+mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
+    $scope.pageId = "menu"
+
 });
