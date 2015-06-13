@@ -43,17 +43,15 @@ mainapp.factory('LoginFboFactory', function () {
 
 });
 mainapp.controller('mainCtrl', function ($scope, $http, LoginFboFactory,$location) {
-    $scope.isLogin=false;
-    console.log($scope.isLogin)
     var dataObj = {
         name: "kubi",
         password: "12445",
         state: false
     };
     $scope.$on('$routeChangeStart', function(next, current) {
-        $scope.isLogin=true;
-console.log($scope.isLogin)
-         /* if($location.path() == "/"){}else{}*/
+           if(current.templateUrl == "views/login.html"){
+               $scope.isLogin=true;}else{
+               $scope.isLogin=false;}
     });
     $scope.mTimer = 7.5;
 
@@ -95,5 +93,6 @@ console.log($scope.isLogin)
 });
 mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
     $scope.pageId = "menu"
+
 
 });

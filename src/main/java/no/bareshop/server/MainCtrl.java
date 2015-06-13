@@ -27,7 +27,7 @@ public class MainCtrl {
 
     @RequestMapping("/")
     String mainCtrl() {
-        cusService.saveCustomer(new CDao().setId(11L).setUsername("KMan"));
+        //cusService.saveCustomer(new CDao().setId(11L).setUsername("KMan"));
         return "forward:/index.html";
     }
 

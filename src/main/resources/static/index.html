@@ -6,11 +6,26 @@
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css" type="text/css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js">
+    </script>
+    <script src="js/angular-route.min.js">
+    </script>
+    <script src="js/mobile-angular-ui.min.js">
+    </script>
+    <!-- Required to use $drag, $swipe and Translate services -->
+    <script src="js/mobile-angular-ui.gestures.min.js"></script>
+    <script src="js/mainapp.js"></script>
+    <script src="js/login.js" type="text/javascript"></script>
 </head>
 
-<body ng-app="mainapp">
-<nav  ng-show="isLogin" class="navbar navbar-default">
+<body ng-app="mainapp" ng-controller="mainCtrl">
+<nav  ng-model="isLogin" ng-show="!isLogin" class="navbar navbar-default">
 
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,27 +80,11 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div id="wrapperdiv" >
-    {{isLogin}} or not
 <div ng-view=""> </div>
 </div>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 
 
-<script src="js/angular.min.js">
-</script>
-<script src="js/angular-route.min.js">
-</script>
-<script src="js/mobile-angular-ui.min.js">
-</script>
-<!-- Required to use $drag, $swipe and Translate services -->
-<script src="js/mobile-angular-ui.gestures.min.js"></script>
-<script src="js/mainapp.js"></script>
-<script src="js/login.js" type="text/javascript"></script>
 </body>
 
 </html>
