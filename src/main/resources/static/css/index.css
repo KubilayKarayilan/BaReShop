@@ -1,4 +1,9 @@
 @media screen and (max-width: 768px) {
+
+    .menu_items {
+        display: block;
+    }
+
     .side-collapse-container{
         width:100%;
         position:relative;
@@ -9,7 +14,7 @@
         left:200px;
     }
     .side-collapse {
-        top:50px;
+        top:95px;
         bottom:0;
         left:0;
         width:200px;
@@ -19,5 +24,9 @@
     }
     .side-collapse.in {
         width:0;
+    }
+    .header-banner {
+        height: 100px  ;
+        width: 100%;
     }
 }
