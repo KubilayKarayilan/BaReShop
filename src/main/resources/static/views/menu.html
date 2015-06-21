@@ -1,5 +1,10 @@
 
-<div class="card card-container">
+<div class="card ">
     <h1>{{pageId}}</h1>
-
+<div ng-repeat="items in menuItems.drinks" style="display: inline-block">
+    <div >
+        <span><img  src="../img/drink-2-icon.png"></span>
+        <span ><p>Drink : {{items}}</p></span>
+    </div>
+</div>
 </div>

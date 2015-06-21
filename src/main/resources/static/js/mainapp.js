@@ -18,15 +18,15 @@ mainapp.config(function ($routeProvider) {
 
         .when('/ol', {
             templateUrl: 'views/ol.html',
-            controller: 'mainCtrl'
+            controller: 'menuCtrl'
         })
         .when('/drink', {
             templateUrl: 'views/drink.html',
-            controller: 'mainCtrl'
+            controller: 'menuCtrl'
         })
         .when('/vin', {
             templateUrl: 'views/vin.html',
-            controller: 'mainCtrl'
+            controller: 'menuCtrl'
         });
 });
 
@@ -93,6 +93,6 @@ mainapp.controller('mainCtrl', function ($scope, $http, LoginFboFactory,$locatio
 });
 mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
     $scope.pageId = "menu"
-
+    $scope.menuItems={drinks:{1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8}};
 
 });
