@@ -1,7 +1,9 @@
 @media screen and (max-width: 768px) {
 
     .menu_items {
-        display: block;
+
+        padding: 5px;
+        background-color: white;
     }
 
     .side-collapse-container{
