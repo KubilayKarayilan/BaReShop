@@ -10,6 +10,17 @@
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/java/hibernate.cfg.xml" />
       </configuration>
     </facet>
+    <facet type="web" name="Web Gradle : BaReShop-1.0.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes/main" />
@@ -86,9 +97,5 @@
     <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.0.20" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-security:1.2.3.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.springframework.security:spring-security-config:3.2.7.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.springframework.security:spring-security-web:3.2.7.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.springframework.security:spring-security-core:3.2.7.RELEASE" level="project" />
   </component>
 </module>

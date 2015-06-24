@@ -1,11 +1,31 @@
+
+    .menu_items {
+        width: 250px;
+        height: 350px;
+        padding: 25px;
+        background-color: white;
+        margin: 10px;
+
+    }
+    .item_pictures {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+.navbar-items {
+    font-size: 26px;
+}
+
 @media screen and (max-width: 768px) {
 
     .menu_items {
-
-        padding: 5px;
+        width: 150px;
+        height: 250px;
+        padding: 15px;
         background-color: white;
-    }
+        margin: 10px;
 
+    }
     .side-collapse-container{
         width:100%;
         position:relative;
@@ -16,7 +36,7 @@
         left:200px;
     }
     .side-collapse {
-        top:95px;
+        top:65px;
         bottom:0;
         left:0;
         width:200px;
@@ -27,8 +47,5 @@
     .side-collapse.in {
         width:0;
     }
-    .header-banner {
-        height: 100px  ;
-        width: 100%;
-    }
+
 }

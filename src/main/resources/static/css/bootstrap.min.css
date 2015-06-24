@@ -4644,8 +4644,8 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 
 .navbar-toggle .icon-bar {
     display: block;
-    width: 40px;
-    height: 4px;
+    width: 22px;
+    height: 2px;
     border-radius: 1px
 }
 
