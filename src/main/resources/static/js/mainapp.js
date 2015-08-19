@@ -54,7 +54,7 @@ mainapp.controller('mainCtrl', function ($scope, $http, LoginFboFactory,$locatio
                $scope.isLogin=false;}
     });
     $scope.mTimer = 7.5;
-
+    $scope.sWidth =  $(window).width();
     $scope.groups = [
         {
             title: 'Dynamic Group Header - 1',

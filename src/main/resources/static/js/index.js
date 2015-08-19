@@ -11,4 +11,5 @@ $(document).ready(function () {
         $(sel).toggleClass('in');
         $(sel2).toggleClass('out');
     });
+
 });
