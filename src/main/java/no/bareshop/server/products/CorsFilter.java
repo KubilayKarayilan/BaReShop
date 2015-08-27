@@ -1,10 +1,6 @@
 package no.bareshop.server.products;
 
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
-import javax.servlet.FilterChain;
+//import javax.servlet.FilterChain;
 
 /**
  * Created by kubilay on 06.06.2015.

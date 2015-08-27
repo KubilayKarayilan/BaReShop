@@ -1,14 +1,12 @@
 
 package no.bareshop.server;
-import org.springframework.stereotype.Controller;
 
-import no.bareshop.server.Customer.CDao;
 import no.bareshop.server.jpa.CustomerService;
-import no.bareshop.server.jpa.CustomerSvcImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @EnableAutoConfiguration
 @ComponentScan()
-public class MainCtrl {
-
+public class MainCtrl extends SpringBootServletInitializer{
+    private static Class<MainCtrl> applicationClass = MainCtrl.class;
 
     @Autowired
     private CustomerService cusService;
@@ -28,7 +26,13 @@ public class MainCtrl {
     @RequestMapping("/")
     String mainCtrl() {
         //cusService.saveCustomer(new CDao().setId(11L).setUsername("KMan"));
+
         return "forward:/index.html";
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(applicationClass);
     }
 
 
