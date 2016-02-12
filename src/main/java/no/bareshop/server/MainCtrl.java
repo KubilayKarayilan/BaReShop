@@ -10,6 +10,11 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Created by kubkaray on 22.04.2015.
@@ -28,6 +33,18 @@ public class MainCtrl extends SpringBootServletInitializer{
         //cusService.saveCustomer(new CDao().setId(11L).setUsername("KMan"));
 
         return "forward:/index.html";
+    }
+    @RequestMapping("/ssectrl")
+    SseEmitter sendMessage(HttpServletResponse response) throws IOException {
+        SseEmitter sseEmitter = new SseEmitter();
+        try {
+            sseEmitter.send("Message #1");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+
+            e.printStackTrace();
+        }
+        return sseEmitter;
     }
 
     @Override

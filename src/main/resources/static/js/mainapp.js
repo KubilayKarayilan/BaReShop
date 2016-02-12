@@ -96,3 +96,25 @@ mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
     $scope.menuItems={drinks:{1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8}};
 
 });
+if (!!window.EventSource) {
+    console.log("Event source available");
+    var source = new EventSource('ssectrl');
+
+    source.addEventListener('message', function(e) {
+        console.log(e.data);
+    });
+
+    source.addEventListener('open', function(e) {
+        console.log("Connection was opened.");
+    }, false);
+
+    source.addEventListener('error', function(e) {
+        if (e.readyState == EventSource.CLOSED) {
+            console.log("Connection was closed.");
+        } else {
+            console.log(e);
+        }
+    }, false);
+} else {
+    console.log("No SSE available");
+}
