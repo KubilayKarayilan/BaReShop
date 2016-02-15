@@ -96,6 +96,9 @@ mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
     $scope.menuItems={drinks:{1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8}};
 
 });
+
+
+/* Server Sent Client
 if (!!window.EventSource) {
     console.log("Event source available");
     var source = new EventSource('ssectrl');
@@ -117,4 +120,40 @@ if (!!window.EventSource) {
     }, false);
 } else {
     console.log("No SSE available");
+}*/
+function webSTest(){
+    var ws = new WebSocket("ws://localhost:8080/wsctrl");
+    console.log("webtest runs")
+    ws.onopen = function ( ) {
+        // Web Socket is connected, send data using send()
+        var url = location.href;
+        console.log(  "open")
+        ws.send("bc:");
+    };
+    ws.onmessage = function (evt) {
+
+        var received_msg = evt.data;
+        console.log(received_msg,"иииииииииииии")
+     /*   var jsonson= undefined;
+        if( received_msg.indexOf("b64") > -1) {
+            jsonson =JSON.parse(received_msg);
+            console.log("jsonson", jsonson);
+        }
+        if (  undefined != jsonson && undefined != jsonson.userName ) {
+            var picfbo={userName:"",b64:"",player:"",pos:"",stat:""}
+    };*/
+
+}
+    ws.onclose = function () {
+        // websocket is closed.
+console.log("close")
+    };
+    ws.onerror = function (error) {
+        console.log(error,"RRRRRRRRRRRRR")
+    }
+
+    function sendMessage() {
+        ws.send("sdf");
+
+    }
 }

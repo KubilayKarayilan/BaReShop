@@ -7,22 +7,37 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import org.springframework.web.socket.WebSocketHandler;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.stream.Stream;
 
 /**
  * Created by kubkaray on 22.04.2015.
  */
 @Controller
 @EnableAutoConfiguration
+@EnableWebSocket
 @ComponentScan()
-public class MainCtrl extends SpringBootServletInitializer{
+public class MainCtrl extends SpringBootServletInitializer implements WebSocketConfigurer {
     private static Class<MainCtrl> applicationClass = MainCtrl.class;
 
     @Autowired
@@ -34,8 +49,9 @@ public class MainCtrl extends SpringBootServletInitializer{
 
         return "forward:/index.html";
     }
+/*
     @RequestMapping("/ssectrl")
-    SseEmitter sendMessage(HttpServletResponse response) throws IOException {
+    SseEmitter sendMessage(HttpServletRequest request) throws IOException {
         SseEmitter sseEmitter = new SseEmitter();
         try {
             sseEmitter.send("Message #1");
@@ -46,6 +62,8 @@ public class MainCtrl extends SpringBootServletInitializer{
         }
         return sseEmitter;
     }
+*/
+
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -54,9 +72,19 @@ public class MainCtrl extends SpringBootServletInitializer{
 
 
 
+
     public static void main(String... args) throws Exception {
 
         SpringApplication.run(MainCtrl.class, args);
 
+    }
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
+        webSocketHandlerRegistry.addHandler(getHandler(),"/wsctrl");
+    }
+    @Bean
+    public WebSocketHandler getHandler() {
+        return new MyHandler();
     }
 }

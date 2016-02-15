@@ -11,7 +11,5 @@ public class ViewConf extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("/index.html");
         String s= "xlckj";
-
-
     }
 }
