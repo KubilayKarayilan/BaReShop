@@ -122,8 +122,9 @@ if (!!window.EventSource) {
     console.log("No SSE available");
 }*/
 function webSTest(){
-    var ws = new WebSocket("ws://localhost:8080/wsctrl");
+    var ws = new WebSocket("ws://192.168.1.104:8080/wsctrl");
     console.log("webtest runs")
+    alert("web test started")
     ws.onopen = function ( ) {
         // Web Socket is connected, send data using send()
         var url = location.href;
@@ -134,6 +135,7 @@ function webSTest(){
 
         var received_msg = evt.data;
         console.log(received_msg,"иииииииииииии")
+        ClientApi.showToast(received_msg)
      /*   var jsonson= undefined;
         if( received_msg.indexOf("b64") > -1) {
             jsonson =JSON.parse(received_msg);
