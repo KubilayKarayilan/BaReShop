@@ -122,7 +122,7 @@ if (!!window.EventSource) {
     console.log("No SSE available");
 }*/
 function webSTest(){
-    var ws = new WebSocket("ws://192.168.1.104:8080/wsctrl");
+    var ws = new WebSocket("ws://localhost:8080/wsctrl");
     console.log("webtest runs")
     alert("web test started")
     ws.onopen = function ( ) {
