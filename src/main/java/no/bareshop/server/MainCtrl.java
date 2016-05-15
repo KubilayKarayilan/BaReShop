@@ -34,7 +34,6 @@ import java.util.stream.Stream;
  * Created by kubkaray on 22.04.2015.
  */
 @Controller
-@EnableAutoConfiguration
 @EnableWebSocket
 @ComponentScan()
 public class MainCtrl extends SpringBootServletInitializer implements WebSocketConfigurer {

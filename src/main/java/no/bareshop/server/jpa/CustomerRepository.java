@@ -3,11 +3,12 @@ package no.bareshop.server.jpa;
 import no.bareshop.server.Customer.CDao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by kubilay on 03.05.2015.
  */
-@Component
+
 public interface CustomerRepository extends CrudRepository<CDao, Long> {
 
     @Override
