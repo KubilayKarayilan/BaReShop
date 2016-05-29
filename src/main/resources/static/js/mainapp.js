@@ -4,12 +4,12 @@ mainapp.config(function ($routeProvider) {
     $routeProvider
 
         // route for the home page
-        .when('/', {
+
+
+        .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'mainCtrl'
         })
-
-
         .when('/menu', {
             templateUrl: 'views/menu.html',
             controller: 'menuCtrl'
@@ -93,7 +93,7 @@ mainapp.controller('mainCtrl', function ($scope, $http, LoginFboFactory,$locatio
 });
 mainapp.controller('menuCtrl', function ($scope, $http, LoginFboFactory) {
     $scope.pageId = "menu"
-    $scope.menuItems={drinks:{1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8}};
+    $scope.menuItems={items:{1:"Meals",2:"Burgers",3:"Drinks",4:"Fries",5:"Desserts & Shakes",6:"McCafe"}};
 
 });
 
@@ -134,7 +134,7 @@ function webSTest(){
     ws.onmessage = function (evt) {
 
         var received_msg = evt.data;
-        console.log(received_msg,"ØØØØØØØØØØØØØ")
+        console.log(received_msg,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
         ClientApi.showToast(received_msg)
      /*   var jsonson= undefined;
         if( received_msg.indexOf("b64") > -1) {

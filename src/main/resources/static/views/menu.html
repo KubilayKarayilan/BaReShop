@@ -1,11 +1,16 @@
-
-<div class="card ">
+<div ng-include src="'views/nav-bar.html'"></div>
+<div class="w3-container  ">
     <h1>{{pageId}}</h1>
-<div class="menu_items" ng-repeat="items in menuItems.drinks" style="display: inline-block" >
-    <div >
-        <span><img  class="item_pictures" src="../img/drink-2-icon.png"></span>
-        <span ><h4>Drink : {{items}}</h4>
-        <p>{{sWidth}}Lorem ipsum tripsu discum hattera duttera!</p></span>
+
+    <div class="w3-third w3-card-4 " ng-repeat="items in menuItems.items" style="display: inline-block; ">
+        <div class="w3-container w3-center ">
+            <span>
+                <img style="width: 100%;height: 80%" src="../img/drink-2-icon.png">
+            </span>
+            <span>
+                <h4> {{items}}</h4>
+                <p>{{sWidth}}Lorem ipsum tripsu discum hattera duttera!</p>
+            </span>
+        </div>
     </div>
-</div>
 </div>
