@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BaReShop.iml" filepath="$PROJECT_DIR$/BaReShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaReShop.iml" filepath="$PROJECT_DIR$/BaReShop.iml" group="BaReShop" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BaReShop_main.iml" filepath="$PROJECT_DIR$/.idea/modules/BaReShop_main.iml" group="BaReShop" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BaReShop_test.iml" filepath="$PROJECT_DIR$/.idea/modules/BaReShop_test.iml" group="BaReShop" />
     </modules>
   </component>
 </project>
